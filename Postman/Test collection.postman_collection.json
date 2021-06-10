@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "ac49dac6-b880-4c2d-bec0-ba46a9284121",
+		"name": "Test collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users/octocat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const responseJson = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Login is proper value\", function () {\r",
+							"    pm.expect(responseJson.login).to.eql(\"octocat\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Id is proper value\", function () {\r",
+							"    pm.expect(responseJson.id).to.eql(583231);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Node id is proper value\", function () {\r",
+							"    pm.expect(responseJson.node_id).to.eql(\"MDQ6VXNlcjU4MzIzMQ==\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Avatar url is proper value\", function () {\r",
+							"    pm.expect(responseJson.avatar_url).to.eql(\"https://avatars.githubusercontent.com/u/583231?v=4\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Gravatar id is proper value\", function () {\r",
+							"    pm.expect(responseJson.gravatar_id).to.eql(\"\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Url is proper value\", function () {\r",
+							"    pm.expect(responseJson.url).to.eql(\"https://api.github.com/users/octocat\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Html url is proper value\", function () {\r",
+							"    pm.expect(responseJson.html_url).to.eql(\"https://github.com/octocat\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Followers url is proper value\", function () {\r",
+							"    pm.expect(responseJson.followers_url).to.eql(\"https://api.github.com/users/octocat/followers\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Name is proper value\", function () {\r",
+							"    pm.expect(responseJson.name).to.eql(\"The Octocat\");\r",
+							"});\r",
+							"\r",
+							"pm.environment.set(\"name_enviroment\", responseJson.name);\r",
+							"\r",
+							"pm.test(\"Created at is proper value\", function () {\r",
+							"    pm.expect(responseJson.created_at).to.eql(\"2011-01-25T18:44:36Z\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Updated at is proper value\", function () {\r",
+							"    pm.expect(responseJson.updated_at).to.eql(\"2021-05-22T14:27:20Z\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.unset(\"name_enviroment\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/users/octocat",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"users",
+						"octocat"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
