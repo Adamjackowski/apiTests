@@ -11,5 +11,5 @@ This small project contain test of one GET request always returnig the same resp
 - Note the new enviroment variable which contains "name" value
 
 ## Java RestAssured
-- Install Java 8
+- Install Java 11 or newer
 - Run test using mvn test command in JavaRestAssured directory

@@ -81,7 +81,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.github.com/users/octocat",
+					"raw": "https://api.github.com/users/{{username}}",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -90,11 +90,17 @@
 					],
 					"path": [
 						"users",
-						"octocat"
+						"{{username}}"
 					]
 				}
 			},
 			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "username",
+			"value": "octocat"
 		}
 	]
 }
